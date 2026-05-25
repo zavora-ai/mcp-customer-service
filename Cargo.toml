@@ -1,6 +1,6 @@
 [package]
 name = "mcp-customer-service"
-version = "2.0.0"
+version = "2.1.0"
 edition = "2024"
 authors = ["James Karanja <james.karanja@zavora.ai>"]
 description = "Customer Service MCP Server — conversations, customer intelligence, resolution, routing, satisfaction, and churn prediction for AI agents"
@@ -25,5 +25,7 @@ chrono = { version = "0.4", features = ["serde"] }
 uuid = { version = "1", features = ["v4"] }
 reqwest = { version = "0.12", features = ["json", "rustls-tls"], default-features = false }
 urlencoding = "2"
+base64 = "0.22"
+async-trait = "0.1"
 
 [workspace]

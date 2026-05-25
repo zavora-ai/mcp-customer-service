@@ -68,10 +68,23 @@ cargo install mcp-customer-service
 
 ## Configuration
 
-No configuration needed — starts with realistic demo data:
-- 5 customers (Enterprise to Free, various health scores)
-- 5 conversations (billing complaint, SSO help, export bug, feature request, API limit)
-- 5 KB articles, 5 canned responses, 3 agents
+The MCP server is a thin API client. It requires a backend that implements the [Customer Service API Spec](docs/api-spec.md).
+
+| Env Var | Required | Description |
+|---------|:---:|-------------|
+| `CUSTOMER_SERVICE_API_URL` | ✅ | Base URL of your backend (e.g. `http://localhost:8080/api/v1`) |
+| `CUSTOMER_SERVICE_API_KEY` | ❌ | Bearer token for auth |
+
+### Supported Backends
+
+| Backend | How |
+|---------|-----|
+| **Your own API** | Implement the [API spec](docs/api-spec.md) in any language |
+| **Zendesk** | Build an adapter that maps Zendesk API → this spec |
+| **Freshdesk** | Build an adapter that maps Freshdesk API → this spec |
+| **Intercom** | Build an adapter that maps Intercom API → this spec |
+
+The MCP server doesn't store any data — it's a pure passthrough to your backend.
 
 ## Client Configuration
 
@@ -80,7 +93,11 @@ No configuration needed — starts with realistic demo data:
   "mcpServers": {
     "customer-service": {
       "command": "mcp-customer-service",
-      "args": []
+      "args": [],
+      "env": {
+        "CUSTOMER_SERVICE_API_URL": "http://localhost:8080/api/v1",
+        "CUSTOMER_SERVICE_API_KEY": "your-api-key"
+      }
     }
   }
 }

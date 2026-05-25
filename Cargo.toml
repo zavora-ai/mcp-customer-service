@@ -1,0 +1,27 @@
+[package]
+name = "mcp-customer-service"
+version = "1.0.0"
+edition = "2024"
+authors = ["James Karanja <james.karanja@zavora.ai>"]
+description = "Customer Service MCP Server — conversations, customer intelligence, resolution, routing, satisfaction, and churn prediction for AI agents"
+license = "Apache-2.0"
+repository = "https://github.com/zavora-ai/mcp-customer-service"
+homepage = "https://enterprise.adk-rust.com"
+keywords = ["mcp", "customer-service", "support", "csat", "helpdesk"]
+categories = ["development-tools"]
+readme = "README.md"
+
+[dependencies]
+adk-mcp-sdk = "0.1"
+rmcp = { version = "1.7", features = ["server", "transport-io", "macros"] }
+serde = { version = "1", features = ["derive"] }
+serde_json = "1"
+tokio = { version = "1", features = ["full"] }
+anyhow = "1"
+tracing = "0.1"
+tracing-subscriber = { version = "0.3", features = ["env-filter"] }
+schemars = "1"
+chrono = { version = "0.4", features = ["serde"] }
+uuid = { version = "1", features = ["v4"] }
+
+[workspace]

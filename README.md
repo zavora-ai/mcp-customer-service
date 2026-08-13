@@ -148,7 +148,7 @@ The MCP server doesn't store any data — it's a pure passthrough to your backen
 ```toml
 server_id = "mcp_customer_service"
 display_name = "Customer Service"
-version = "1.0.0"
+version = "2.2.0"
 domain = "customer-service"
 risk_level = "medium"
 writes_allowed = "gated"

@@ -1,6 +1,6 @@
 server_id = "mcp_customer_service"
 display_name = "Customer Service"
-version = "2.1.0"
+version = "2.2.0"
 domain = "customer_service"
 sdk_version = "0.2.0"
 risk_level = "medium"

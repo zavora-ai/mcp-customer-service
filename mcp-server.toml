@@ -1,0 +1,151 @@
+server_id = "mcp_customer_service"
+display_name = "Customer Service"
+version = "2.2.0"
+domain = "customer_service"
+sdk_version = "0.2.0"
+risk_level = "medium"
+writes_allowed = "gated"
+transports = ["stdio"]
+credentials = []
+governance_gates = []
+environments = ["development", "staging", "production"]
+
+[[tools]]
+name = "list_conversations"
+description = "List conversations filtered by status, priority, or assigned agent"
+risk_class = "read_only"
+requires_approval = false
+credential_bindings = []
+
+[[tools]]
+name = "get_conversation"
+description = "Get full conversation with message history"
+risk_class = "read_only"
+requires_approval = false
+credential_bindings = []
+
+[[tools]]
+name = "start_conversation"
+description = "Start a new conversation from a customer"
+risk_class = "internal_write"
+requires_approval = false
+credential_bindings = []
+
+[[tools]]
+name = "reply_conversation"
+description = "Send a public reply to the customer"
+risk_class = "read_only"
+requires_approval = false
+credential_bindings = []
+
+[[tools]]
+name = "add_internal_note"
+description = "Add an internal note (not visible to customer)"
+risk_class = "internal_write"
+requires_approval = false
+credential_bindings = []
+
+[[tools]]
+name = "get_customer_profile"
+description = "Get customer profile: plan, lifetime value, health score, history"
+risk_class = "read_only"
+requires_approval = false
+credential_bindings = []
+
+[[tools]]
+name = "get_customer_health"
+description = "Get customer health score with contributing factors"
+risk_class = "read_only"
+requires_approval = false
+credential_bindings = []
+
+[[tools]]
+name = "get_interaction_history"
+description = "Get all past interactions for a customer"
+risk_class = "read_only"
+requires_approval = false
+credential_bindings = []
+
+[[tools]]
+name = "assess_churn_risk"
+description = "Assess churn risk for a customer based on signals"
+risk_class = "read_only"
+requires_approval = false
+credential_bindings = []
+
+[[tools]]
+name = "search_knowledge_base"
+description = "Search knowledge base for relevant articles"
+risk_class = "read_only"
+requires_approval = false
+credential_bindings = []
+
+[[tools]]
+name = "suggest_response"
+description = "Get AI-suggested response based on conversation context"
+risk_class = "read_only"
+requires_approval = false
+credential_bindings = []
+
+[[tools]]
+name = "get_canned_responses"
+description = "List available canned/template responses"
+risk_class = "read_only"
+requires_approval = false
+credential_bindings = []
+
+[[tools]]
+name = "resolve_conversation"
+description = "Resolve a conversation and request satisfaction rating"
+risk_class = "read_only"
+requires_approval = false
+credential_bindings = []
+
+[[tools]]
+name = "assign_agent"
+description = "Assign conversation to an agent or team"
+risk_class = "internal_write"
+requires_approval = false
+credential_bindings = []
+
+[[tools]]
+name = "escalate"
+description = "Escalate to senior agent/manager with reason"
+risk_class = "read_only"
+requires_approval = false
+credential_bindings = []
+
+[[tools]]
+name = "get_queue_status"
+description = "Get queue status: depth, wait times, agent availability"
+risk_class = "read_only"
+requires_approval = false
+credential_bindings = []
+
+[[tools]]
+name = "get_satisfaction_scores"
+description = "Get satisfaction scores: CSAT, NPS, customer effort"
+risk_class = "read_only"
+requires_approval = false
+credential_bindings = []
+
+[[tools]]
+name = "get_service_metrics"
+description = "Get service metrics: response time, resolution time, FCR, volume"
+risk_class = "read_only"
+requires_approval = false
+credential_bindings = []
+
+[[tools]]
+name = "list_agents"
+description = "List available agents and their status"
+risk_class = "read_only"
+requires_approval = false
+credential_bindings = []
+
+[[tools]]
+name = "merge_conversations"
+description = "Merge duplicate conversations into one"
+risk_class = "read_only"
+requires_approval = false
+credential_bindings = []

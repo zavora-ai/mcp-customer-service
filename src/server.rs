@@ -33,7 +33,7 @@ fn result_to_string(r: Result<serde_json::Value, anyhow::Error>) -> String {
     }
 }
 
-#[tool_router(server_handler)]
+#[tool_router]
 impl CsServer {
     #[tool(description = "List conversations filtered by status, priority, or assigned agent")]
     async fn list_conversations(&self, Parameters(input): Parameters<FilterInput>) -> String {
@@ -138,4 +138,11 @@ impl CsServer {
     async fn merge_conversations(&self, Parameters(input): Parameters<MergeInput>) -> String {
         result_to_string(self.backend.merge_conversations(&input.primary_id, &json!({"secondary_id": input.secondary_id})).await)
     }
+}
+
+adk_mcp_sdk::mcp_2026_server! {
+    server: CsServer,
+    task_tools: [],
+    approval_tools: [],
+    cache_ttl_ms: 60_000,
 }
